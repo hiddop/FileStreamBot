@@ -9,7 +9,7 @@ from pyrogram.types import Message
 from pyrogram.file_id import FileId
 from FileStream.bot import FileStream
 from FileStream.utils.database import Database
-from FileStream.config import Telegram, Server
+from FileStream.config import Telegram, Server, URL
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
@@ -128,7 +128,7 @@ async def update_file_id(msg_id, multi_clients):
 async def send_file(client: Client, db_id, file_id: str, message):
     file_caption = getattr(message, 'caption', None) or get_name(message)
     log_msg = await client.send_cached_media(chat_id=Telegram.FLOG_CHANNEL, file_id=file_id,
-                                             caption=f'**{file_caption}**\n**File ID:** `{db_id}`')
+                                             caption=f'**{file_caption}**\n\n😁**File ID:** {URL}/{db_id}')
 
     file_name = get_name(message)  # Get the file name
 
