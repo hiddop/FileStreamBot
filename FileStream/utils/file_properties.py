@@ -9,7 +9,7 @@ from pyrogram.types import Message
 from pyrogram.file_id import FileId
 from FileStream.bot import FileStream
 from FileStream.utils.database import Database
-from FileStream.config import Telegram, Server, URL
+from FileStream.config import Telegram, Server
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
