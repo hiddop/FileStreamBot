@@ -12,6 +12,7 @@ from FileStream.utils.database import Database
 from FileStream.config import Telegram, Server
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
+OPURL = "http://filestreambot-production.up.railway.app/watch/"
 
 async def get_file_ids(client: Client | bool, db_id: str, multi_clients, message) -> Optional[FileId]:
     logging.debug("Starting of get_file_ids")
@@ -127,7 +128,7 @@ async def update_file_id(msg_id, multi_clients):
 async def send_file(client: Client, db_id, file_id: str, message):
     file_caption = getattr(message, 'caption', None) or get_name(message)
     log_msg = await client.send_cached_media(chat_id=Telegram.FLOG_CHANNEL, file_id=file_id,
-                                             caption=f'**{file_caption}**\n\n😁{db_id}')
+                                             caption=f'{file_caption}\n\n**<a href="{OPURL}/{db_id}">WATCH ONLINE</a>**')
 
     file_name = get_name(message)  # Get the file name
 
