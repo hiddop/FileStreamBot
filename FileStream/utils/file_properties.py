@@ -12,7 +12,7 @@ from FileStream.utils.database import Database
 from FileStream.config import Telegram, Server
 
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
-OPURL = "http://filestreambot-production.up.railway.app/watch/"
+OPURL = "https://anime-zenith-production.up.railway.app/watch/"
 
 async def get_file_ids(client: Client | bool, db_id: str, multi_clients, message) -> Optional[FileId]:
     logging.debug("Starting of get_file_ids")
