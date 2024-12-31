@@ -128,7 +128,7 @@ async def update_file_id(msg_id, multi_clients):
 async def send_file(client: Client, db_id, file_id: str, message):
     file_caption = getattr(message, 'caption', None) or get_name(message)
     log_msg = await client.send_cached_media(chat_id=Telegram.FLOG_CHANNEL, file_id=file_id,
-                                             caption=f'**{file_caption}**\n**━━━━━━━━━━━━━━━━━◇**\n**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n**━━━━━━━━━━━━━━━━━◇**\n**<a href="https://yashyasag.github.io/hiddens">🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n\n**<a href="{OPURL}/{db_id}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n**———————————————————**')
+                                             caption=f'**{file_caption}**\n**━━━━━━━━━━━━━━━━━◇**\n**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n**━━━━━━━━━━━━━━━━━◇**\n**<a href="https://yashyasag.github.io/hiddens">🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n**———————————————————**\n**<a href="{OPURL}/{db_id}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n**———————————————————**')
 
     file_name = get_name(message)  # Get the file name
 
