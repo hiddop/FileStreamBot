@@ -85,14 +85,24 @@ async def channel_receive_handler(bot: Client, message: Message):
         file_caption = getattr(message, 'caption', None) or get_name(message)
         
         # Append the download link to the caption
-        new_caption = f'**{file_caption}**\n**━━━━━━━━━━━━━━━━━◇**\n**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n**━━━━━━━━━━━━━━━━━◇**\n**<a href="https://yashyasag.github.io/hiddens">🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n**———————————————————**\n**<a href="{OPURL}/{get_file_ids}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n**———————————————————**')
-        
-        # Edit the message with the new caption
+        new_caption = (
+    f'**{file_caption}**\n'
+    f'**━━━━━━━━━━━━━━━━━◇**\n'
+    f'**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">;ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n'
+    f'**━━━━━━━━━━━━━━━━━◇**\n'
+    f'**<a href="https://yashyasag.github.io/hiddens">;🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n'
+    f'**———————————————————**\n'
+    f'**<a href="{OPURL}/{get_file_ids}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n'
+    f'**———————————————————**'
+)
+
         await bot.edit_message_caption(
-            chat_id=message.chat.id,
-            message_id=message.id,
-            caption=new_caption
-    )
+    chat_id=message.chat.id,
+    message_id=message.id,
+    caption=new_caption,
+    parse_mode="HTML"  # Required for rendering <a> tags
+)
+
 
     except FloodWait as w:
         print(f"Sleeping for {str(w.x)}s")
