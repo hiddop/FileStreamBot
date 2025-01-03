@@ -92,7 +92,7 @@ async def channel_receive_handler(bot: Client, message: Message):
     f'**━━━━━━━━━━━━━━━━━◇**\n'
     f'**<a href="https://yashyasag.github.io/hiddens">;🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n'
     f'**———————————————————**\n'
-    f'**<a href="{OPURL}/{get_file_ids}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n'
+    f'**<a href="{OPURL}/{str(inserted_id)}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n'
     f'**———————————————————**'
 )
 
@@ -100,7 +100,7 @@ async def channel_receive_handler(bot: Client, message: Message):
     chat_id=message.chat.id,
     message_id=message.id,
     caption=new_caption,
-    parse_mode=ParseMode.MARKDOWN  # Required for rendering <a> tags
+    parse_mode="html"  # Required for rendering <a> tags
 )
 
 
