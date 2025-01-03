@@ -87,20 +87,20 @@ async def channel_receive_handler(bot: Client, message: Message):
         # Append the download link to the caption
         new_caption = (
     f'**{file_caption}**\n'
-    f'**━━━━━━━━━━━━━━━━━◇**\n'
-    f'**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">;ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n'
-    f'**━━━━━━━━━━━━━━━━━◇**\n'
-    f'**<a href="https://yashyasag.github.io/hiddens">;🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n'
-    f'**———————————————————**\n'
-    f'**<a href="{OPURL}/{str(inserted_id)}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n'
-    f'**———————————————————**'
-)
+    f'━━━━━━━━━━━━━━━━━◇\n'
+    f'⛧ 🄱🅈 :-) [ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈](https://t.me/TEAM_OPTECH)   ♛\n'
+    f'━━━━━━━━━━━━━━━━━◇\n'
+    f'[🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍](https://yashyasag.github.io/hiddens)\n'
+    f'———————————————————\n'
+    f'[🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ]({OPURL}/{get_file_ids})\n'
+    f'———————————————————'
+        )
 
         await bot.edit_message_caption(
     chat_id=message.chat.id,
     message_id=message.id,
     caption=new_caption,
-    parse_mode="html"  # Required for rendering <a> tags
+    parse_mode=ParseMode.MARKDOWN  # Required for rendering <a> tags
 )
 
 
