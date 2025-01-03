@@ -10,7 +10,7 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums.parse_mode import ParseMode
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
-OPURL = "https://hhservers.github.io/streamonline/?token"
+OPURL = "https://hhservers.github.io/streamonline/"
 
 @FileStream.on_message(
     filters.private
@@ -92,7 +92,7 @@ async def channel_receive_handler(bot: Client, message: Message):
     f'**━━━━━━━━━━━━━━━━━◇**\n'
     f'**[🅾🅿- 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍](https://yashyasag.github.io/hiddens)**\n'
     f'**——————————————————**\n'
-    f'**[🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ]({OPURL}={str(inserted_id)})**\n'
+    f'**[🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ]({OPURL}?token={str(inserted_id)})**\n'
     f'**——————————————————**'
         )
 
