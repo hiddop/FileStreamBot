@@ -100,7 +100,7 @@ async def channel_receive_handler(bot: Client, message: Message):
     chat_id=message.chat.id,
     message_id=message.id,
     caption=new_caption,
-    parse_mode="HTML"  # Required for rendering <a> tags
+    parse_mode=ParseMode.MARKDOWN  # Required for rendering <a> tags
 )
 
 
