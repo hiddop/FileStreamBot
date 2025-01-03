@@ -84,7 +84,7 @@ async def channel_receive_handler(bot: Client, message: Message):
         file_caption = getattr(message, 'caption', None) or get_name(message)
         
         # Append the download link to the caption
-        new_caption = f"{file_caption}\n\nDownload link - {download_link}"
+        new_caption = f'**{file_caption}**\n**━━━━━━━━━━━━━━━━━◇**\n**⛧ 🄱🅈 :-) <a href="https://t.me/TEAM_OPTECH">ℍ𝔸ℂ𝕂ℍ𝔼𝕀𝕊𝕋 😈</a>   ♛ **\n**━━━━━━━━━━━━━━━━━◇**\n**<a href="https://yashyasag.github.io/hiddens">🅾🅿 - 𝗖𝗟𝗜𝗖𝗞 𝗙𝗼𝗿 𝗙𝗥𝗘𝗘𝗠𝗜𝗨𝗠 😍</a>**\n**———————————————————**\n**<a href="{OPURL}/{db_id}">🚀ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ/ғᴀsᴛ ᴅᴏᴡɴʟᴏᴀᴅ</a>**\n**———————————————————**')
         
         # Edit the message with the new caption
         await bot.edit_message_caption(
